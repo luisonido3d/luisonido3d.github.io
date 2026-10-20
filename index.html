@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis Rodríguez — Game Producer</title>
+  <meta name="description" content="Luis Rodríguez, Game Producer and Project Manager based in Madrid. Associate Producer on Once Upon a Puppet (PC, PS5, Xbox Series X|S, 2025). Available immediately.">
+  <meta name="theme-color" content="#151413">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="canonical" href="https://luisonido3d.github.io/">
+  <!-- link previews (LinkedIn, email, WhatsApp) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Luis Rodríguez">
+  <meta property="og:title" content="Luis Rodríguez — Game Producer">
+  <meta property="og:description" content="Associate Producer on Once Upon a Puppet (PC, PS5, Xbox, 2025). 2+ years in production. Available immediately · Madrid, open to relocation.">
+  <meta property="og:url" content="https://luisonido3d.github.io/">
+  <meta property="og:image" content="https://luisonido3d.github.io/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to my work</a>
+  <header class="topbar">
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+    <a class="brand" href="#top" aria-label="Luis Rodríguez · back to top">
+      <img class="emblem" src="img/logo.png" alt="" width="52" height="52"><span class="brand-name">Luis Rodríguez</span>
+    </a>
+    <div class="bar-right">
+      <p class="status" id="topStatus"><span class="dot" aria-hidden="true"></span>Available immediately</p>
+      <div class="contact-pop">
+        <button class="btn btn-sm btn-primary" id="fabBtn" type="button" aria-expanded="false" aria-controls="fabPanel">Contact me</button>
+        <div class="fab-panel" id="fabPanel" hidden></div>
+      </div>
+      <div class="switch" id="switch" data-lang="en" role="group" aria-label="Language">
+        <button class="lang" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang" type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <!-- Shown as-is when JavaScript is not available (crawlers, previews, strict browsers). -->
+      <div class="hero-text">
+        <p class="eyebrow">Game Producer</p>
+        <h1>Luis Rodríguez</h1>
+        <p class="headline">I keep people, priorities and deadlines on the same page, so creative teams can focus on making great games.</p>
+        <p class="intro">Associate Producer on Once Upon a Puppet (Flatter Than Earth), released in 2025 for PC, PlayStation 5 and Xbox Series X|S. 2+ years in production. Madrid, Spain · open to relocation · remote experience (CET ±3 h). Spanish (native), English (fluent). Master's in Production Management for Animation, VFX and Video Games, U-TAD.</p>
+        <p class="actions"><a class="btn btn-primary" href="mailto:Luisonido3d@gmail.com" target="_blank" rel="noopener">Luisonido3d@gmail.com</a> <a class="btn" href="https://www.linkedin.com/in/luisonido3d" target="_blank" rel="noopener">LinkedIn</a> <a class="btn" href="cv/Luis_Rodriguez_CV_GameProducer_EN.pdf" download target="_blank" rel="noopener">Download CV</a></p>
+      </div>
+    </section>
+    <section class="figures" id="figures" aria-label="Key figures"></section>
+    <section class="facts" id="facts"></section>
+    <section class="rec" id="rec"></section>
+    <section class="block" id="work">
+      <div id="workHead"></div>
+      <div class="board">
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="panel" id="panel" role="tabpanel"></div>
+      </div>
+    </section>
+    <section class="block contact" id="contact"></section>
+    <section class="block beyond" id="beyond"></section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <div class="doodles" id="doodles" aria-hidden="true"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="worm.js"></script>
+</body>
+</html>

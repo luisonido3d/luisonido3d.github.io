@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Centralita · variantes del portfolio</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <style>
+    :root { --bg: #151413; --surface: #1d1b1a; --line: #34312e; --text: #ece7df; --muted: #b3ab9f; --accent: #e5566d; }
+    * { box-sizing: border-box; margin: 0; }
+    body { background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; padding: 2rem 1rem; }
+    main { max-width: 860px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; } .note { color: var(--muted); margin: .4rem 0 1.6rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .card { padding: 1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    .card h2 { font-size: 1.1rem; margin-bottom: .2rem; } .card p { color: var(--muted); font-size: .88rem; margin-bottom: .8rem; }
+    .row { display: grid; grid-template-columns: 2.4rem 1fr auto; align-items: center; gap: .5rem; padding: .5rem 0; border-top: 1px solid var(--line); }
+    .lang { font-weight: 700; color: var(--muted); font-size: .85rem; }
+    code { font-size: .8rem; color: var(--muted); word-break: break-all; }
+    .btns { display: flex; gap: .4rem; }
+    a.btn, button { padding: .35rem .7rem; border: 1px solid var(--line); border-radius: 7px; background: #232120; color: var(--text); font: 600 .82rem inherit; text-decoration: none; cursor: pointer; white-space: nowrap; }
+    button.copy { background: var(--accent); border-color: var(--accent); color: #1a0b0e; }
+    .preview { margin-top: 1.6rem; color: var(--muted); font-size: .9rem; } .preview a { color: var(--text); }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Centralita del portfolio</h1>
+  <p class="note">Solo para ti. Elige la variante, cópiala y envíala. Quien reciba el enlace solo verá esa variante; desde ella no se puede llegar a esta página.</p>
+  <div class="grid" id="grid"></div>
+  <p class="preview">Revisar las tres variantes con selector: <a href="../index.html?preview">inglés</a> · <a href="../es/index.html?preview">español</a></p>
+</main>
+<script>
+  const BASE = "https://luisonido3d.github.io/";
+  const VARIANTS = [
+    ["Game Producer", "Variante principal: solo videojuegos.", [["EN", "game-producer/", "GameProducer_EN"], ["ES", "es/game-producer/", "GameProducer_ES"]]],
+    ["Project Manager", "Gestión de proyectos, fuera de los videojuegos.", [["EN", "project-manager/", "ProjectManager_EN"], ["ES", "es/project-manager/", "ProjectManager_ES"]]],
+    ["General", "Cualquier otro puesto; destaca el trato con el público.", [["EN", "general/", "General_EN"], ["ES", "es/general/", "General_ES"]]],
+  ];
+  document.getElementById("grid").innerHTML = VARIANTS.map(([name, desc, links]) => `
+    <section class="card"><h2>${name}</h2><p>${desc}</p>
+      ${links.map(([lang, path, cv]) => `<div class="row"><span class="lang">${lang}</span><code>${BASE.replace("https://", "")}${path}</code>
+        <span class="btns"><a class="btn" href="../${path}index.html" target="_blank" rel="noopener">Abrir</a><button class="copy" type="button" data-url="${BASE}${path}">Copiar</button><a class="btn" href="../cv/Luis_Rodriguez_CV_${cv}.pdf" download>CV</a></span></div>`).join("")}
+    </section>`).join("");
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("button.copy");
+    if (!b) return;
+    navigator.clipboard.writeText(b.dataset.url).then(() => { b.textContent = "Copiado"; setTimeout(() => (b.textContent = "Copiar"), 1500); });
+  });
+</script>
+</body>
+</html>
