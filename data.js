@@ -10,7 +10,7 @@ const SITE = {
   linkedin: "https://www.linkedin.com/in/luisonido3d",
   linkedinLabel: "linkedin.com/in/luisonido3d",
   photo: "img/luis.jpg",
-  updated: { en: "Updated October 2026", es: "Actualizado en octubre de 2026" },
+  updated: { en: "Updated November 2026", es: "Actualizado en noviembre de 2026" },
 };
 
 /* ---------- interface text ---------- */
